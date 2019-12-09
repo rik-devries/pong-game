@@ -1,4 +1,5 @@
 #include <cmath>
+#include <iostream>
 
 //Include glut for all operating systems
 #ifdef _WIN32
@@ -13,14 +14,14 @@
 #include "paddle.h"
 
 paddle::paddle(){
-  _height = 10;
-  _width = 2;
+  _height = 8;
+  _width = 1;
   _speed = 1;
   setLocation(0);
+  _color = { 1, 1, 1 };
 }
 
-paddle::~paddle(){
-}
+paddle::~paddle(){}
 
 void paddle::moveUp(){
   _p.y += 1;
@@ -38,12 +39,12 @@ void paddle::setLocation(int side){
   switch(side){
     case 0:
       //Left side
-      _p.x = -10;
+      _p.x = -20;
       _p.y = 0;
       break;
     case 1:
       //Right side
-      _p.x = 10;
+      _p.x = 20;
       _p.y = 0;
       break;
     default:
@@ -55,10 +56,10 @@ void paddle::draw(){
   glColor3f(_color.r, _color.g, _color.b);
 
 	glBegin(GL_QUAD_STRIP);
-	glVertex2f(_p.x - _width/2, _p.y + _height/2); //Top left corner
-	glVertex2f(_p.x + _width/2, _p.y + _height/2); //Top right corner
-	glVertex2f(_p.x - _width/2, _p.y - _height/2); //Bottom left corner
-	glVertex2f(_p.x + _width/2, _p.y - _height/2); //Bottom right corner
+	glVertex2f((_p.x - _width/2)/RATIO, (_p.y + _height/2)/RATIO); //Top left corner
+	glVertex2f((_p.x + _width/2)/RATIO, (_p.y + _height/2)/RATIO); //Top right corner
+	glVertex2f((_p.x - _width/2)/RATIO, (_p.y - _height/2)/RATIO); //Bottom left corner
+	glVertex2f((_p.x + _width/2)/RATIO, (_p.y - _height/2)/RATIO); //Bottom right corner
 
 	glEnd();
 }

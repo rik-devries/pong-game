@@ -1,5 +1,6 @@
 //Include glut for all operating systems
 #include <cmath>
+#include <iostream>
 
 #ifdef _WIN32
   #include <windows.h>
@@ -25,8 +26,8 @@ void ball::draw(){
   point points[360];
   for (int i = 0; i < 360; i++){
     float radian = (M_PI * i) / 180;
-    float x = _p.x + _radius * cos(radian);
-    float y = _p.y + _radius * sin(radian);
+    float x = (_p.x + _radius * cos(radian))/RATIO;
+    float y = (_p.y + _radius * sin(radian))/RATIO;
     points[i] = { x, y };
   }
 

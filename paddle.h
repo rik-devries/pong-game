@@ -16,8 +16,8 @@ class paddle : public object {
     void setLocation(int side); //Either left (0) or right (1)
     void draw();
   private:
-    int _height;
-    int _width;
+    float _height;
+    float _width;
     point _p;
     float _speed;
     colorRGB _color;

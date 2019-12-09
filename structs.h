@@ -1,6 +1,9 @@
 #ifndef POINT_H
 #define POINT_H
 
+#define RATIO 25
+#define WINDOWSIZE 850
+
 typedef struct _point {
   float x;
   float y;
