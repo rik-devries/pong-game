@@ -20,6 +20,7 @@ class paddle : public object {
     int _width;
     point _p;
     float _speed;
+    colorRGB _color;
 };
 
 #endif

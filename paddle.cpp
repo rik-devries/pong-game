@@ -52,5 +52,13 @@ void paddle::setLocation(int side){
 }
 
 void paddle::draw(){
-  //TODO: add drawing function
+  glColor3f(_color.r, _color.g, _color.b);
+
+	glBegin(GL_QUAD_STRIP);
+	glVertex2f(_p.x - _width/2, _p.y + _height/2); //Top left corner
+	glVertex2f(_p.x + _width/2, _p.y + _height/2); //Top right corner
+	glVertex2f(_p.x - _width/2, _p.y - _height/2); //Bottom left corner
+	glVertex2f(_p.x + _width/2, _p.y - _height/2); //Bottom right corner
+
+	glEnd();
 }
