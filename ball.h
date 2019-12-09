@@ -3,6 +3,7 @@
 
 #include "structs.h"
 #include "paddle.h"
+#include "object.h"
 
 class ball : public object {
   public:

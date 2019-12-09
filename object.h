@@ -3,15 +3,8 @@
 
 class object {
   public:
-    virtual object() = 0;
     virtual ~object() = 0;
-
-    virtual void draw();
-
-  private:
-    colorRGB _color;
-    point _anchor;
-
-}
+    virtual void draw() = 0;
+};
 
 #endif

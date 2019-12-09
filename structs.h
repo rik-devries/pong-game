@@ -2,8 +2,8 @@
 #define POINT_H
 
 typedef struct _point {
-  int x;
-  int y;
+  float x;
+  float y;
 } point;
 
 typedef struct _color {

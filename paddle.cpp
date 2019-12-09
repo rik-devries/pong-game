@@ -1,3 +1,15 @@
+#include <cmath>
+
+//Include glut for all operating systems
+#ifdef _WIN32
+  #include <windows.h>
+  #include <GL/freeglut.h>
+#elif __APPLE__
+  #include <GLUT/glut.h>
+#elif __linux__
+  #include <GL/freeglut.h>
+#endif
+
 #include "paddle.h"
 
 paddle::paddle(){
@@ -39,6 +51,6 @@ void paddle::setLocation(int side){
   }
 }
 
-void draw(){
-  //TODO: add OpenGL code
+void paddle::draw(){
+  //TODO: add drawing function
 }
